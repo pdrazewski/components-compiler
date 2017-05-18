@@ -1,0 +1,30 @@
+{
+  "name": "compiler",
+  "version": "1.0.0",
+  "description": "Compiler for frontend components",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdrazewski/compiler.git"
+  },
+  "keywords": [
+    "compiler",
+    "atomic",
+    "design",
+    "styleguide",
+    "bem",
+    "itcss"
+  ],
+  "author": "pdrazewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdrazewski/compiler/issues"
+  },
+  "homepage": "https://github.com/pdrazewski/compiler#readme",
+  "devDependencies": {
+    "webpack": "^2.5.1"
+  }
+}

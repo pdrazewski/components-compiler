@@ -1,0 +1,7 @@
+{% set data = data|default('') %}
+
+<div class="m-component">
+    {% for item in data %}
+        <p class="m-component_item">{{item.content}}</p>   
+    {% endfor %}
+</div>

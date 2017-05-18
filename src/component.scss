@@ -1,0 +1,10 @@
+@import "../node_modules/normalize.css/normalize.css";
+@import "_vars";
+
+.m-component {
+    margin: 20px;
+    font-family: "Arial";
+    &_item {
+        padding: 20px;
+    }
+}

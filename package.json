@@ -4,7 +4,8 @@
   "description": "Compiler for frontend components",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "server": "webpack-dev-server",
+    "build": "webpack -p"
   },
   "dependencies": {
     "babel-core": "^6.24.1",

@@ -5,10 +5,9 @@ Webpack compiler for creating frontend component. Build on top Twig templates, S
 ## How to start
 
 ```
+git clone git@github.com:pdrazewski/components-compiler.git
+cd components-compiler
 npm install
-```
-
-```
 npm run server 
 ```
 starts server on port 8001

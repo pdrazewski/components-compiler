@@ -3,17 +3,18 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const component = require('./package.json');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: [
-  './component.js', 
-  './component.scss'],
+  './js/component.js', 
+  './css/style.scss'],
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: 'js/bundle.min.js',
   },
-  module: {
+  module: { 
     rules: [
       {
         test: /\.js$/,
@@ -27,6 +28,26 @@ module.exports = {
         test: /\.(sass|scss)$/,
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader', 'postcss-loader'])
       },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'url-loader?limit=100000'
+      }, 
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              progressive: true,
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              }
+            }
+          }
+        ]
+      },
       { 
       	test: /\.twig$/, 
       	loader: "twig-loader" 
@@ -36,7 +57,7 @@ module.exports = {
   devtool: "#inline-source-map",
   plugins: [
     new ExtractTextPlugin({
-      filename: 'component.bundle.css',
+      filename: 'css/styles.bundle.min.css',
       allChunks: true
     }),
     new HtmlWebpackPlugin({
@@ -44,8 +65,13 @@ module.exports = {
     	template: '../template.twig',
     	minify: {
     		collapseWhitespace: true
-    	}
-    })
+    	},
+      hash: true,
+      cache: true
+    }),
+    new CopyWebpackPlugin([
+      { from: 'static', to: 'static' }
+    ])
   ],
   devServer: {
     inline: true,

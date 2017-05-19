@@ -7,6 +7,7 @@ Webpack compiler for creating frontend components. Build on top of Twig template
 - Compile HTML / TWIG templates with twig-loader
 - Compile JS with babel-loader (ES2015 preset)
 - Compile CSS with scss-loader, css-loader and postcss-loader (autoprefixer)
+- Bundle fonts and images with url-loader and file-loader
 - Source maps are set up for both CSS and JS
 - Live update with webpack-dev-server
 
@@ -16,13 +17,13 @@ Webpack compiler for creating frontend components. Build on top of Twig template
 git clone git@github.com:pdrazewski/components-compiler.git
 cd components-compiler
 npm install
-npm run server 
+npm start
 ```
 starts server on port 8009
 [http://localhost:8009](http://localhost:8009)
 
 ```
-npm run build
+npm build
 ```
 builds standalone HTML/CSS/JS component
 

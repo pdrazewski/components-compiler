@@ -62,5 +62,5 @@ Component-loader example (twig template)
     'data': data
 } %}
 ```
-CSS and JS files are bundled during *build/server* tasks.
+CSS and JS files are bundled during *build/start* tasks.
 

@@ -4,7 +4,7 @@
   "description": "Compiler for frontend components",
   "main": "webpack.config.js",
   "scripts": {
-    "server": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "webpack -p"
   },
   "dependencies": {

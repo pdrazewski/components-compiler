@@ -25,7 +25,7 @@ module.exports = {
       },
       { 
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader', 'postcss-loader'])
       },
       { 
       	test: /\.twig$/, 
@@ -33,6 +33,7 @@ module.exports = {
       }
     ]
   },
+  devtool: "#inline-source-map",
   plugins: [
     new ExtractTextPlugin({
       filename: 'component.bundle.css',

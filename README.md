@@ -2,6 +2,14 @@
 
 Webpack compiler for creating frontend components. Build on top of Twig templates, Scss and ES6 javascript.
 
+## Features
+
+- Compile HTML / TWIG templates with twig-loader
+- Compile JS with babel-loader (ES2015 preset)
+- Compile CSS with scss-loader, css-loader and postcss-loader (autoprefixer)
+- Source maps are set up for both CSS and JS
+- Live update with webpack-dev-server
+
 ## How to start
 
 ```
@@ -55,9 +63,3 @@ Component-loader example (twig template)
 ```
 CSS and JS files are bundled with webpack during *build/server* tasks.
 
-## Used webpack loaders
-
-- twig-loader
-- babel-loader with ES2015 preset
-- scss-loader
-- css-loader

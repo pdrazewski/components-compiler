@@ -1,6 +1,6 @@
 # Components compiler
 
-Webpack compiler for creating frontend component. Build on top Twig templates, Scss and ES6 javascript.
+Webpack compiler for creating frontend components. Build on top of Twig templates, Scss and ES6 javascript.
 
 ## How to start
 
@@ -10,7 +10,8 @@ cd components-compiler
 npm install
 npm run server 
 ```
-starts server on port 8001
+starts server on port 8009
+[http://localhost:8009](http://localhost:8009)
 
 ```
 npm run build
@@ -20,7 +21,7 @@ builds standalone HTML/CSS/JS component
 ## Creating your own component
 
 All component source files are placed inside src directory. 
-Component is loaded with component-loader, which contains all the data and options for component.
+Component is loaded via component-loader, which contains all the data and options for component.
 
 Component example (twig template)
 

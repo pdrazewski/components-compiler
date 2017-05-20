@@ -1,6 +1,6 @@
 # Components compiler
 
-Webpack compiler for creating frontend components. Build on top of Twig templates, Scss and ES6 javascript. Used by https://github.com/pdrazewski/components-kit
+Webpack compiler for creating frontend components. Build on top of Twig templates, Scss and ES6 javascript. Used as a compile *engine* in https://github.com/pdrazewski/components-kit
 
 ## Features
 

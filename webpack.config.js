@@ -15,7 +15,25 @@ module.exports = {
     filename: 'js/bundle.min.js',
   },
   module: { 
-    rules: [
+    preLoaders: [
+      {
+        test: /\.vue$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      }
+    ],
+    loaders: [
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
       {
         test: /\.js$/,
         exclude: [/node_modules/],
@@ -52,6 +70,17 @@ module.exports = {
       	test: /\.twig$/, 
       	loader: "twig-loader" 
       }
+    ]
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
+  },
+  vue: {
+    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['last 3 versions']
+      })
     ]
   },
   devtool: "#inline-source-map",

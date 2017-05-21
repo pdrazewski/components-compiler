@@ -11,4 +11,4 @@ Webpack compiler for creating frontend components. Build on top of Vuejs, Twig t
 - Bundle fonts and images with url-loader and file-loader
 - Source maps are set up for both CSS and JS
 - Live update with webpack-dev-server
-- Ship in with [https://github.com/cujojs/most](most.js) for reactive programming
+- Ship in with [most.js](https://github.com/cujojs/most) for reactive programming

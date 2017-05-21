@@ -14,32 +14,23 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'js/bundle.min.js',
   },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },
   module: { 
-    preLoaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      }
-    ],
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] },
+          options: { presets: ["es2015"] },
         }],
       },
       { 
@@ -70,17 +61,6 @@ module.exports = {
       	test: /\.twig$/, 
       	loader: "twig-loader" 
       }
-    ]
-  },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  },
-  vue: {
-    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['last 3 versions']
-      })
     ]
   },
   devtool: "#inline-source-map",

@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   module: { 
-    rules: [
+    loaders: [
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -30,7 +30,7 @@ module.exports = {
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ["es2015"] },
+          options: { presets: ['es2015'] },
         }],
       },
       { 
